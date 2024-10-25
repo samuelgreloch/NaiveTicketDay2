@@ -19,6 +19,8 @@ public class TicketMachine {
     // The number of tickets printed.
     private Integer ticketNumber;
 
+    private Integer refund;
+
     /**
      * Create a machine that issues tickets of the given price.
      * Note that the price must be greater than zero, and there
@@ -27,8 +29,9 @@ public class TicketMachine {
     public TicketMachine(Integer ticketCost) {
         price = ticketCost;
         balance = 0;
-        total = 0;
+        total = 20;
         ticketNumber = 0;
+        refund = 0;
     }
 
     /**
@@ -83,8 +86,85 @@ public class TicketMachine {
         // Update the total collected with the balance.
         total = total + balance;
         // Clear the balance.
-        balance = 0;
+       balance = 0;
 
         return "Ticket price: " + price + " cents. " + "Your total is " + total + ".";
     }
+        public Integer getRefund() {
+            balance = getBalance();
+            refund = balance - price;
+            return refund;
+
+
+    }
+
+
+    //public static void main(String[] args) {
+    //TicketMachine myticket1 = new TicketMachine(100);
+    //      {
+    // myticket1.balance(100);
+    // myticket1.price(50);
+    //myticket1.ticketNumber(1);
+    //myticket1.total(1);
+
+
+    //     }
+    // }
+
+    //private Integer gettotal(int i) {
+    //     return total;
+    // }
+
+    // private Integer getticketNumber(int i) {
+    //     return ticketNumber;
+
+    //  }
+
+    //private Integer price(int i) {
+    //     return price;
+    //  }
+
+    //private Integer balance(int i) {
+    //      return balance;
+    // }
+
+   // public static void main(String[] args) {
+
+       // TicketMachine machine1 = new TicketMachine(20);
+       // System.out.println("price of each Ticket: " + machine1.getPrice());
+      //  System.out.println("amount of money Inserted: " + machine1.insertMoney(50));
+      //  System.out.println("Balance present: " + machine1.getBalance());
+
+       // System.out.println(machine1.printTicket());
+       // System.out.println(machine1.getTicketNumber());
+       // System.out.println(machine1.getRefund());
+       // System.out.println("balance present: " + machine1.getBalance());
+   // }
+//}
+public static void main(String[] args) {
+
+    TicketMachine machine1 = new TicketMachine(20);
+    System.out.println("Your ticket number:" + machine1.getTicketNumber());
+    System.out.println("Your total is:" + machine1.total);
+    System.out.println("price of each Ticket: " + machine1.getPrice());
+    //System.out.println(machine1.total = machine1.total + machine1.balance);
+    System.out.println("amount of money Inserted: " + machine1.insertMoney(50));
+    System.out.println("balance present: " + machine1.getRefund());
+    if (machine1.insertMoney(0) < machine1.price)
+        System.out.println("You are broke");
+
+   // System.out.println("Balance present: " + machine1.getBalance());
+
+
+    //System.out.println(machine1.printTicket());
+    //System.out.println(machine1.getTicketNumber());
+    //System.out.println(machine1.getRefund());
+
+
+    //System.out.println( machine1.printTicket());
+     //System.out.println(machine1.getincrementTicketNumber());
+
+
+      // machine1.balance = 0;
+}
 }

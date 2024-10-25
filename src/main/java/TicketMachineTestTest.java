@@ -1,8 +1,9 @@
-
-import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 /**
  * The test class TicketMachineTest.
@@ -10,11 +11,11 @@ import org.junit.Test;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class TicketMachineTest {
+public class TicketMachineTestTest {
     /**
      * Default constructor for test class TicketMachineTest
      */
-    public TicketMachineTest() {
+    public TicketMachineTestTest() {
     }
 
     @Before
@@ -27,21 +28,22 @@ public class TicketMachineTest {
 
     @Test
     public void insertMoneyTest() {
-        TicketMachine testTicketMachine = new TicketMachine(4);
+        TicketMachine testTicketMachine = new TicketMachine(0);
 
-        testTicketMachine.insertMoney(20);
+        testTicketMachine.insertMoney(0);
 
-        assertEquals(Integer.valueOf(20), testTicketMachine.getBalance());
+        assertEquals(Integer.valueOf(0), testTicketMachine.getBalance());
     }
 
     @Test
     public void printTicketTest() {
-        TicketMachine testTicketMachine = new TicketMachine(13);
+        TicketMachine testTicketMachine = new TicketMachine(20);
 
-        assertEquals("Ticket price: 13 cents. Your total is 13.", testTicketMachine.printTicket());
+        assertEquals("Ticket price: 20 cents. Your total is 20.", testTicketMachine.printTicket());
         assertEquals(Integer.valueOf(1), testTicketMachine.getTicketNumber());
         assertEquals(Integer.valueOf(2), testTicketMachine.incrementTicketNumber());
         assertNotEquals(Integer.valueOf(3), testTicketMachine.getTicketNumber());
+
     }
 
     @Test
@@ -63,5 +65,10 @@ public class TicketMachineTest {
         assertEquals(Integer.valueOf(10), testTicketMachine.getTicketNumber());
         assertNotEquals(Integer.valueOf(9), testTicketMachine.getTicketNumber());
     }
-
 }
+
+
+
+
+
+
